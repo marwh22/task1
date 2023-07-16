@@ -1,7 +1,6 @@
 # task1
-html pages, some of which were programmed using py-script and the other using Python flask, and using the Python library to perform operations on the image entered by the user
-
-here the run of the task1 : https://youtu.be/fJC7rhpWjyw
+Created HTML pages where the functions of open CV in Python have performed operations on the image entered by the use using Flask and Pyscript to
+here the run of the task1: https://youtu.be/fJC7rhpWjyw
 
 ![Screenshot 2023-07-15 194436](https://github.com/marwh22/task1/assets/85491809/1f56f220-697d-47ba-b3a4-288c70c96bbe)
 
