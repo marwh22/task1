@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Grayscale Image</title>
+</head>
+<body>
+  <form enctype="multipart/form-data" method="POST">
+    <input type="file" id="image" />  
+    <input type="submit" />    
+  </form> 
+  <div id="results">
+    <img id="original" />   
+    <img id="grayscale" />    
+  </div>
+  
+  <py-script type="text/pyscript">
+from cv2 import *  
+
+def OnSubmit(e):   
+ 
+   file = document.getElementById("image").files[0]
+      
+   ConvertToGrayscale(file)
+
+def ConvertToGrayscale(file):
+      
+   # Read image from file      
+   img = imread(file)
+   
+   # Convert to grayscale
+   grayscale = cvtColor(img, COLOR_BGR2GRAY)
+
+   # Save as data URL    
+   _, grayscale_buffer = imencode(".jpg", grayscale) 
+   grayscale_dataurl = "data:image/jpg;base64," + str(base64.b64encode(grayscale_buffer))
+
+   # Set grayscale image src
+   grayscale.src = grayscale_dataurl 
+  </py-script>
+
+</body>
+</html>
